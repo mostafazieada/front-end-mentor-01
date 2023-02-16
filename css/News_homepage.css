@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    height: 100vh;
+    width: 100%;
+}
+
+:root {
+    --SoftOrange: hsl(35, 77%, 62%);
+    --SoftRed: hsl(5, 85%, 63%);
+
+
+    --Off-white: hsl(36, 100%, 99%);
+    --GrayishBlue: hsl(233, 8%, 79%);
+    --DarkGrayishBlue: hsl(236, 13%, 42%);
+    --VeryDarkBlue: hsl(240, 100%, 5%);
+
+}
+
+.container {
+    width: 95%;
+}
+
+/*===============globals=====================*/
+/*===============start header=====================*/
+
+
+header {
+    width: 100%;
+    height: 75px;
+}
+
+header .container {
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header .container .nave-bar {
+    position: fixed;
+    background-color: var(--Off-white);
+    width: 60%;
+    height: 100%;
+    right: -100%;
+    top: 0;
+    transition: 0.4s;
+    z-index: 200;
+}
+
+.over-lay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(0, 0, 0, 0.5);
+
+}
+
+header .container .nave-bar .close {
+    position: absolute;
+    right: 10%;
+    top: 20px;
+}
+
+header .container .nave-bar ul {
+    list-style-type: none;
+    margin: 50% 20px;
+}
+
+header .container .nave-bar ul li {
+    margin: 25px 0 0 0;
+}
+
+
+
+@media (min-width:376px) {
+    .header {
+        height: 90px;
+    }
+
+    header .container {
+        height: 100px;
+    }
+
+    header .container .nave-bar {
+
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        top: 0;
+        right: 0;
+
+    }
+
+    header .container .nave-bar ul {
+
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .container .nave-bar ul li {
+        margin: 0;
+        height: fit-content;
+    }
+
+    header .container .nave-bar li:hover {
+        color: var(--SoftOrange);
+        cursor: pointer;
+    }
+
+    .close,
+    .barse {
+        display: none;
+    }
+}
+
+/*===============end header=====================*/
+
+/*===============start section=====================*/
+/*===============start first=====================*/
+.section {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.section div {
+    margin-top: 25px;
+}
+
+.section .first {
+    width: 100%;
+}
+
+.section .image {
+    width: 100%;
+}
+
+.section .first .image img:first-child {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.section .first .image img:last-child {
+    display: none;
+}
+
+.section .first .text * {
+    margin-top: 20px;
+}
+
+.section .first .text h1 {
+    font-weight: 800;
+}
+
+.section .first .text p {
+    color: var(--DarkGrayishBlue);
+    line-height: 25px;
+}
+
+.section .first .text button {
+    width: 54%;
+    height: 50px;
+    letter-spacing: 4px;
+    display: block;
+    background-color: var(--SoftRed);
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--Off-white);
+    border: none;
+}
+
+.section .first .text button:hover {
+    cursor: pointer;
+    background-color: var(--VeryDarkBlue);
+}
+
+@media (min-width:376px) {
+    .section {
+        display: grid;
+        grid-template-areas:
+            "first first  second"
+            "first first  second"
+            "first first  second"
+            "third third  third"
+        ;
+        column-gap: 20px;
+    }
+
+    .section .first {
+        grid-area: first;
+        margin-top: 0;
+    }
+
+    .section .first .text {
+        height: 50%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 75% 25%;
+    }
+
+    .section .first .text h1 {
+        font-size: 66px;
+
+        grid-area: 1/1/3/2;
+    }
+
+    .section .first .text p {
+
+        font-size: 20px;
+        line-height: 32px;
+
+        grid-area: 1/2/1/3;
+
+    }
+
+    .section .first .image {
+        width: 100%;
+        height: 50%;
+    }
+
+    .section .first .image img:last-child {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .section .first .image img:first-child {
+        display: none;
+    }
+
+
+    .section .second {
+        grid-area: second;
+    }
+
+    .section .third {
+        grid-area: third;
+        display: flex;
+    }
+
+    .section .third .text {
+        padding-left: 20px;
+    }
+
+    .section .third h1 {
+        font-size: 35px;
+    }
+
+    .section .third h4 {
+        font-size: 20px;
+    }
+
+    .section .third p {
+        font-size: 15px;
+    }
+}
+
+/*===============end first=====================*/
+
+/*===============start second=====================*/
+.section .second {
+    background-color: var(--VeryDarkBlue);
+}
+
+.section .second * {
+    margin: 10px;
+}
+
+.section .second div {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section .second div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    transform: translatex(-50%);
+    background-color: var(--DarkGrayishBlue);
+
+}
+
+.section .second h2 {
+    padding: 20px 0 0 10px;
+    color: var(--SoftOrange);
+}
+
+.section .second p {
+    font-weight: 700;
+    color: var(--Off-white);
+}
+
+.section .second p:hover {
+    color: var(--SoftOrange);
+    cursor: pointer;
+}
+
+.section .second span {
+    color: var(--DarkGrayishBlue);
+    display: block;
+}
+
+/*===============end second=====================*/
+
+/*===============start third=====================*/
+.third {
+    /* margin-top: 40px; */
+}
+
+.third div {
+    margin: 20px 0 20px 0;
+    display: flex;
+}
+
+.third div .image {
+    background-color: red;
+    width: 160px;
+}
+
+.third div .image img {
+    max-width: 100%;
+    object-fit: cover;
+    display: flex;
+}
+
+.third div .text {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.third div .text h1 {
+    font-weight: 800;
+    font-size: 35px;
+    color: var(--GrayishBlue);
+}
+
+.third div .text h4 {
+    font-weight: 700;
+    font-size: 17px;
+    margin: 25px 0 25px 0;
+}
+
+.third div .text h4:hover {
+    color: var(--SoftRed);
+    cursor: pointer;
+}
+
+
+/*===============end third=====================*/
+
+
+
+/*===============end section=====================*/
